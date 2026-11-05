@@ -1,39 +1,53 @@
 # 丽萍姐报账 (`liping-reimbursement`)
 
 > **电子科技大学视频通信与智能计算团队（AVC²）差旅报销整理与初审 Skill**  
-> 把手头的行程、车票、发票、订单截图直接发给 Agent，由 **AVC² 团队助理丽萍姐** 自动帮你还原行程、把《附件1 报销材料清单》Excel、《附件2 出差车辆行驶登记表》Word 和《情况说明》全部填好、排好单张 A4 打印册，并配**例图**清楚告诉你还需要提供什么材料或信息。
+> 把手头的行程、车票、发票、订单截图直接发给你的 Agent，由 **AVC² 团队助理丽萍姐** 自动帮你还原行程、把《附件1 报销材料清单》Excel、《附件2 出差车辆行驶登记表》Word 和《情况说明》全部填好、排好单张 A4 打印册，并配**例图**清楚告诉你还需要提供什么材料或信息。
 
 ![我是 AVC² 团队助理丽萍姐：还需你提供什么？](docs/丽萍报账-清单示例.png)
 
 ---
 
-## 一、如何接入你的 Agent
+## 一、如何接入你的 Agent（全面支持国产与海外主流 Agent）
 
-支持 **Codex CLI / Desktop**、**Claude Code**、**Antigravity (Gemini)**、**Cursor** 等主流 Agent 工具。
+支持所有主流 **国产 AI Agent / AI IDE** 与 **海外 Agent 工具**：
+- **国产 Agent**：**字节跳动 Trae / Trae CN**、**阿里 Qwen Code / 通义灵码**、**腾讯 CodeBuddy**、**百度文心快码 (Comate)**、**智谱 AutoGLM / 清言 Agent**、**月之暗面 Kimi CLI / 桌面端**、**DeepSeek Agent (結合 Cline / Roo Code / Cherry Studio)**、**豆包 MarsCode** 等。
+- **海外 Agent**：**Codex**、**Claude Code**、**Antigravity (Gemini)**、**Cursor**、**Windsurf** 等。
 
-### 方式 1：命令行一键接入（推荐）
+### 方式 1：一键脚本接入全部 Agent（推荐）
 
-打开终端运行以下命令，即可同时接入到本机的 Codex、Antigravity、Claude Code 与通用 `~/.agents/skills` 目录：
+打开终端（macOS / Linux 终端，或 Windows Git Bash / WSL）运行以下命令，会自动将 `liping-reimbursement` 接入本机所有主流国产与海外 Agent：
 
 ```bash
 git clone https://github.com/wqytommy666/liping-reimbursement.git
-mkdir -p ~/.agents/skills ~/.codex/skills ~/.gemini/config/skills ~/.claude/skills
-
-# 复制 Skill 到本地技能库并建立软链接
-cp -R liping-reimbursement/skills/liping-reimbursement ~/.agents/skills/liping-reimbursement
-ln -sfn ~/.agents/skills/liping-reimbursement ~/.codex/skills/liping-reimbursement
-ln -sfn ~/.agents/skills/liping-reimbursement ~/.gemini/config/skills/liping-reimbursement
-ln -sfn ~/.agents/skills/liping-reimbursement ~/.claude/skills/liping-reimbursement
+cd liping-reimbursement
+bash install.sh
 ```
 
-### 方式 2：下载 Release 压缩包接入
+### 方式 2：各款国产与海外 Agent 单独接入指南
 
-1. 前往 [Releases 页面](https://github.com/wqytommy666/liping-reimbursement/releases) 下载 `liping-reimbursement.zip`。
-2. 解压后将 `liping-reimbursement` 文件夹放入你所使用的 Agent 技能目录：
-   - **Codex**：`~/.codex/skills/liping-reimbursement`
-   - **Antigravity / Gemini**：`~/.gemini/config/skills/liping-reimbursement`
-   - **Claude Code**：`~/.claude/skills/liping-reimbursement`
-   - **通用 Agents 目录**：`~/.agents/skills/liping-reimbursement`
+如果你只想接入自己常用的某一款 Agent，也可以从 [Releases 页面](https://github.com/wqytommy666/liping-reimbursement/releases) 下载 `liping-reimbursement.zip` 解压，或按下方对应方式放入目录：
+
+| Agent 名称 | 所属厂商 | 接入目录 / 配置方式 |
+| --- | --- | --- |
+| **Trae CN / Trae** | 字节跳动 | 全局放入 `~/.trae-cn/skills/liping-reimbursement`（或 `~/.trae/skills/liping-reimbursement`），或放入当前工作区 `.trae/skills/liping-reimbursement` |
+| **Qwen Code / 通义灵码** | 阿里巴巴 | 全局放入 `~/.qwen/skills/liping-reimbursement`（或 `~/.tongyi/skills/liping-reimbursement`）；VS Code 插件版可在工作区添加 `.qwen/skills/liping-reimbursement` |
+| **CodeBuddy** | 腾讯 | 全局放入 `~/.codebuddy/skills/liping-reimbursement`，或放入项目目录 `.codebuddy/skills/liping-reimbursement` |
+| **文心快码 (Comate)** | 百度 | 全局放入 `~/.comate/skills/liping-reimbursement`，或在 Zulu 智能体「规则/技能」中导入 `skills/liping-reimbursement/SKILL.md` |
+| **智谱 AutoGLM / GLM CLI** | 智谱 AI | 放入 `~/.glm/skills/liping-reimbursement` 或通用 `~/.agents/skills/liping-reimbursement` |
+| **Kimi / DeepSeek (配 Cline / Roo Code)** | 月之暗面 / 深度求索 | 在 VS Code 的 Cline / Roo Code 中接入 DeepSeek-V3/R1 或 Kimi API，技能放入 `~/.cline/skills/liping-reimbursement` 或 `~/.roo/skills/liping-reimbursement` |
+| **Cherry Studio / 豆包 / 纳米 AI 等桌面客户端** | 国产桌面端 | 打开本仓库，直接把 `skills/liping-reimbursement` 文件夹作为「工作区目录 / 本地知识库」挂载，并将 `SKILL.md` 设为助手提示词 |
+| **Cursor / Windsurf** | 海外 AI IDE | 放入 `~/.cursor/skills/liping-reimbursement` 或 `~/.windsurf/skills/liping-reimbursement` |
+| **Codex / Claude Code / Antigravity** | OpenAI / Anthropic / Google | 分别放入 `~/.codex/skills/`、`~/.claude/skills/`、`~/.gemini/config/skills/` |
+
+> **Windows PowerShell 手动复制示例**（以字节 Trae CN 和阿里通义 Qwen 为例）：
+> ```powershell
+> git clone https://github.com/wqytommy666/liping-reimbursement.git
+> New-Item -ItemType Directory -Force -Path "$HOME\.trae-cn\skills", "$HOME\.qwen\skills", "$HOME\.codebuddy\skills", "$HOME\.agents\skills"
+> Copy-Item -Recurse -Force .\liping-reimbursement\skills\liping-reimbursement "$HOME\.trae-cn\skills\liping-reimbursement"
+> Copy-Item -Recurse -Force .\liping-reimbursement\skills\liping-reimbursement "$HOME\.qwen\skills\liping-reimbursement"
+> Copy-Item -Recurse -Force .\liping-reimbursement\skills\liping-reimbursement "$HOME\.codebuddy\skills\liping-reimbursement"
+> Copy-Item -Recurse -Force .\liping-reimbursement\skills\liping-reimbursement "$HOME\.agents\skills\liping-reimbursement"
+> ```
 
 ---
 
@@ -49,7 +63,7 @@ ln -sfn ~/.agents/skills/liping-reimbursement ~/.claude/skills/liping-reimbursem
 丽萍姐，帮我报销这次差旅，行程和现有票据都在 /path/to/你的报销文件夹 里，你先帮我把表格和说明填好，再告诉我还差什么需要提供。
 ```
 
-> 也可以显式点名调用：`使用 $liping-reimbursement 帮我整理 /path/to/你的报销文件夹 的差旅报销`
+> 也可以在支持 `/` 或 `$` 的 Agent 里直接点名调用：`liping-reimbursement`
 
 ### 第 2 步：查看自动填好的表格/Word，按例图补交缺项或直接回复缺失信息
 
@@ -125,6 +139,7 @@ Agent 会把所有信息填入 **《附件1-报销材料清单.xlsx》**、**《
 ```text
 liping-reimbursement/
 ├── README.md
+├── install.sh
 ├── LICENSE
 ├── docs/
 │   ├── 丽萍报账-清单示例.png
