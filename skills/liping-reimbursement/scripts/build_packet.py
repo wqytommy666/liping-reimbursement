@@ -83,17 +83,18 @@ def validate(case, base):
 
 
 def p(text, style):
-    return Paragraph(escape(str(text or '')).replace('\n', '<br/>'), style)
+    escaped = escape(str(text or '')).replace('²', '<super>2</super>').replace('\n', '<br/>')
+    return Paragraph(escaped, style)
 
 
 def render_list(case, output):
     style = ParagraphStyle('body', fontName='CJK', fontSize=10, leading=15,
                            textColor=colors.HexColor('#233249'), wordWrap='CJK')
     small = ParagraphStyle('small', parent=style, fontSize=9, leading=13)
-    title = ParagraphStyle('title', parent=style, fontSize=24, leading=31, spaceAfter=9)
+    title = ParagraphStyle('title', parent=style, fontSize=21, leading=28, spaceAfter=9)
     muted = ParagraphStyle('muted', parent=small, textColor=colors.HexColor('#657185'))
     width = A4[0] - 84
-    story = [p('LIPING REIMBURSEMENT · 团队科研组助理丽萍姐', muted), Spacer(1, 8),
+    story = [p('LIPING REIMBURSEMENT · AVC² 团队助理丽萍姐', muted), Spacer(1, 8),
              p(case['title'], title)]
     if case.get('example'):
         story += [p('虚构示例 · 用于展示使用流程，不是实际报销材料', muted), Spacer(1, 12)]
@@ -139,12 +140,19 @@ def render_list(case, output):
         c.line(42, 38, A4[0] - 42, 38)
         c.setFont('CJK', 8)
         c.setFillColor(colors.HexColor('#657185'))
-        c.drawString(42, 24, '丽萍姐报账 · 团队科研组助理' + (' / 示例' if case.get('example') else ''))
+        prefix = '丽萍姐报账 · AVC'
+        c.drawString(42, 24, prefix)
+        w_prefix = c.stringWidth(prefix, 'CJK', 8)
+        c.setFont('CJK', 5.5)
+        c.drawString(42 + w_prefix + 0.5, 27.5, '2')
+        w_sup = c.stringWidth('2', 'CJK', 5.5)
+        c.setFont('CJK', 8)
+        c.drawString(42 + w_prefix + w_sup + 1, 24, ' 团队助理' + (' / 示例' if case.get('example') else ''))
         c.drawRightString(A4[0] - 42, 24, str(doc.page))
 
     SimpleDocTemplate(str(output), pagesize=A4, leftMargin=42, rightMargin=42,
                       topMargin=38, bottomMargin=52, title=case['title'],
-                      author='丽萍姐报账 (Liping Reimbursement)').build(
+                      author='丽萍姐报账 · AVC² 团队助理').build(
                           story, onFirstPage=footer, onLaterPages=footer)
 
 
