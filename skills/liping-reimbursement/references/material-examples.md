@@ -1,8 +1,8 @@
-# 缺什么，就展示对应图片
+# 材料例图索引（缺什么就展示对应例图）
 
-图例来自用户的历史报销材料。只遮姓名和身份证号，其他信息保留。每次展示最相关的1至3张，每张配一两句，具体字段见 `assets/material-examples/catalog.json`。
+向老师或同学要补充材料时，每次展示最相关的 1 至 3 张**例图**，每张配一两句简短提示，具体字段见 `assets/material-examples/catalog.json`。
 
-| 缺项 | 图片（相对技能目录） | 简短提示 |
+| 缺项 | 例图路径（相对技能目录） | 简短提示 |
 | --- | --- | --- |
 | 支付记录 | assets/material-examples/payment-record.png | 发支付详情截图，有时间、金额、收款方即可；平台简称可接受。 |
 | 合并支付/退款 | assets/material-examples/refund-payment.png | 发支付和退款截图，注明对应哪些票据。 |
@@ -14,18 +14,17 @@
 | 网约车行程单 | assets/material-examples/taxi-itinerary.png | 从出行平台获取有时间、起终点和费用的行程单。 |
 | 网约车发票 | assets/material-examples/taxi-invoice.png | 提供发票，并与行程单对应。 |
 | 注册费发票 | assets/material-examples/conference-fee-invoice.png | 向收费方要发票，参会通知和收费标准另附。 |
-| 行程变更说明 | assets/material-examples/itinerary-change-note.png | 助手按真实行程起草，本人核实签名；本图为原文重排。 |
+| 行程变更说明 | assets/material-examples/itinerary-change-note.png | 由我按你的真实行程直接帮你写好，你核对无误后打印签字即可。 |
 | 会议通知/邀请函 | assets/material-examples/conference-notice.png | 提供含会议时间、地点和主办方的会议通知或邀请函。 |
 | 会议注册费收费标准 | assets/material-examples/conference-fee-standard.png | 报销注册费时附收费标准，能看清对应代表类型的收费金额。 |
 | 论文录用通知 | assets/material-examples/paper-acceptance-notice.png | 因论文录用参会或报销相关费用时，提供含论文题目与录用结论的通知。 |
-| 出差车辆行驶登记表（附件2） | assets/material-examples/vehicle-registration-form.png | 自驾或租车报销时填写（已内置 `assets/附件2-电子科技大学出差车辆行驶登记表.docx`，助手可预填）。 |
-| 邀请方承担食宿情况说明 | assets/material-examples/host-covered-lodging-note.png | 邀请方承担食宿不用证明，报销时不报销食宿就行，由助手自动起草情况说明并由本人签名。 |
+| 出差车辆行驶登记表（附件2） | assets/material-examples/vehicle-registration-form.png | 自驾或租车报销时必填；你把车牌号、往返里程等发给我，我直接帮你把内置的附件2 Word 表填好。 |
+| 邀请方承担食宿情况说明 | assets/material-examples/host-covered-lodging-note.png | 邀请方承担食宿不用证明，报销时不报销食宿就行，由我直接帮你写好情况说明，你打印签字即可。 |
 | 其余按需补充事项 | assets/material-examples/no-source-examples.png | 仅在涉及且缺失时展示（导师/项目确认、收款方不一致盖章说明、航司行程单/审批表）。 |
 
-例如：“还缺酒店水单，向酒店要一份住宿明细即可，参考下图。”随后直接嵌入 `hotel-detail.png`。
+例如：“还缺酒店水单，向酒店要一份住宿明细发我就行，例图如下：”随后直接嵌入 `hotel-detail.png`。
 
-收款方显示简称或星号的原截图照常接受，不要求展开全称，不把简称当作收款方不一致。邀请方承担食宿不用证明，报销时不报销对应食宿并由助手起草情况说明即可。只有实际金额、订单等存在矛盾时才询问具体问题。
-
-图例不能替代当前凭证；不混入当次材料册或费用计算。原文档只用于本地处理，分享版使用平面图片，姓名含手写姓名及开票人姓名，身份证号含已部分隐藏的号码。其他字段按用户要求保留。
-
-导师/项目确认、商家盖章说明、航司官方行程单和完整审批表暂未提供固定样图；不伪造这些材料。机票款发票不当作航司官方行程单，注册费发票不当作会议通知。
+- 收款方显示简称或星号的原截图照常接受，不要求展开全称，不把简称当作收款方不一致。
+- 邀请方承担食宿不用证明，报销时不报销对应食宿并由我帮你写好情况说明即可。
+- 凡是 Excel（附件1）或 Word（附件2、情况说明）里需要填的信息，让对方直接把信息发给我，由我帮他填进表格和 Word 里。
+- 例图仅用于演示材料长什么样，不混入当次材料册或费用计算。
