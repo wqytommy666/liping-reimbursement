@@ -1,0 +1,210 @@
+[
+  {
+    "key": "payment-record",
+    "title": "支付记录",
+    "file": "payment-record.png",
+    "page": 1,
+    "required_fields": [
+      "保留支付时间、金额、收款方；平台简称可接受。"
+    ],
+    "where_to_get": "在支付App的账单详情中截图。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R03"
+  },
+  {
+    "key": "refund-payment",
+    "title": "支付与退款记录",
+    "file": "refund-payment.png",
+    "page": 2,
+    "required_fields": [
+      "发支付和退款截图，注明对应哪些票据。"
+    ],
+    "where_to_get": "在原订单或支付账单中查找。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R03 / R05 / R07"
+  },
+  {
+    "key": "hotel-detail",
+    "title": "酒店水单 / 住宿明细",
+    "file": "hotel-detail.png",
+    "page": 3,
+    "required_fields": [
+      "查看入住、退房、单价、天数及合计。"
+    ],
+    "where_to_get": "向酒店前台或订房平台索取住宿明细。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R09"
+  },
+  {
+    "key": "hotel-invoice",
+    "title": "住宿费发票",
+    "file": "hotel-invoice.png",
+    "page": 4,
+    "required_fields": [
+      "提供房费发票；住宿详情没写清时配水单或订单。"
+    ],
+    "where_to_get": "向酒店或实际开票方索取。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R01 / R09"
+  },
+  {
+    "key": "rail-ticket",
+    "title": "火车票 / 铁路电子客票",
+    "file": "rail-ticket.png",
+    "page": 5,
+    "required_fields": [
+      "查看乘车日期、起讫站、乘车人和票价。"
+    ],
+    "where_to_get": "从购票渠道获取报销凭证。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R06"
+  },
+  {
+    "key": "airfare-invoice",
+    "title": "机票款发票",
+    "file": "airfare-invoice.png",
+    "page": 6,
+    "required_fields": [
+      "提供机票发票；行程信息不足时补平台或航司行程单。"
+    ],
+    "where_to_get": "从出票平台或服务商获取。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R06"
+  },
+  {
+    "key": "refund-fee-invoice",
+    "title": "退票手续费发票",
+    "file": "refund-fee-invoice.png",
+    "page": 7,
+    "required_fields": [
+      "提供手续费发票及对应退票记录。"
+    ],
+    "where_to_get": "从原出票平台或服务商获取。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R07"
+  },
+  {
+    "key": "taxi-itinerary",
+    "title": "网约车 / 出租车行程单",
+    "file": "taxi-itinerary.png",
+    "page": 8,
+    "required_fields": [
+      "查看每段时间、起终点和费用。"
+    ],
+    "where_to_get": "从出行平台获取，与发票对应。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R08"
+  },
+  {
+    "key": "taxi-invoice",
+    "title": "网约车 / 出租车发票",
+    "file": "taxi-invoice.png",
+    "page": 9,
+    "required_fields": [
+      "提供发票，并附对应行程单。"
+    ],
+    "where_to_get": "从出行平台或开票方获取。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R01 / R08"
+  },
+  {
+    "key": "conference-fee-invoice",
+    "title": "会议注册费发票",
+    "file": "conference-fee-invoice.png",
+    "page": 10,
+    "required_fields": [
+      "提供注册费发票，参会通知和收费标准另附。"
+    ],
+    "where_to_get": "向主办方或收费方索取。",
+    "source_kind": "历史截图（仅遮姓名及身份证号）",
+    "rule": "R11"
+  },
+  {
+    "key": "itinerary-change-note",
+    "title": "行程变更 / 食宿等情况说明",
+    "file": "itinerary-change-note.png",
+    "page": 11,
+    "required_fields": [
+      "助手按真实情况（如行程变更、邀请方承担食宿不报销等）起草，本人核实后签名。"
+    ],
+    "where_to_get": "本页按历史说明原文重排。",
+    "source_kind": "历史说明原文重排",
+    "rule": "相关事实说明"
+  },
+  {
+    "key": "conference-notice",
+    "title": "会议通知 / 邀请函",
+    "file": "conference-notice.png",
+    "page": 12,
+    "required_fields": [
+      "提供含会议时间、地点和主办方的会议通知或邀请函。"
+    ],
+    "where_to_get": "从会议主办方、官网或通知邮件获取。",
+    "source_kind": "历史材料（仅遮姓名）",
+    "rule": "R11"
+  },
+  {
+    "key": "conference-fee-standard",
+    "title": "会议注册费收费标准",
+    "file": "conference-fee-standard.png",
+    "page": 13,
+    "required_fields": [
+      "报销会议注册费时附收费标准，能看清对应代表类型的收费金额。"
+    ],
+    "where_to_get": "从会议官网或会议注册通知中获取（左为国内会议示例，右为国际会议示例）。",
+    "source_kind": "历史材料（仅遮姓名）",
+    "rule": "R11"
+  },
+  {
+    "key": "paper-acceptance-notice",
+    "title": "论文录用通知",
+    "file": "paper-acceptance-notice.png",
+    "page": 14,
+    "required_fields": [
+      "因论文录用参会或报销相关费用时，提供含论文题目与录用结论的通知。"
+    ],
+    "where_to_get": "从投稿系统或录用通知邮件导出（左为国际会议示例，右为中文期刊示例）。",
+    "source_kind": "历史材料（仅遮姓名）",
+    "rule": "R11"
+  },
+  {
+    "key": "vehicle-registration-form",
+    "title": "出差车辆行驶登记表（附件2）",
+    "file": "vehicle-registration-form.png",
+    "page": 15,
+    "required_fields": [
+      "教学科研需要自驾或租车时填写（已内置附件2模板，助手可自动预填行程）。"
+    ],
+    "where_to_get": "注意：自驾或租车报销不发放市内交通费。",
+    "source_kind": "内置附件2官方模板",
+    "rule": "R12"
+  },
+  {
+    "key": "host-covered-lodging-note",
+    "title": "邀请方承担食宿情况说明",
+    "file": "host-covered-lodging-note.png",
+    "page": 16,
+    "required_fields": [
+      "邀请方承担食宿不用证明，报销的时候不报销食宿就行，写个说明。"
+    ],
+    "where_to_get": "助手按真实行程自动起草情况说明，本人核实后签名即可。",
+    "source_kind": "标准说明模板",
+    "rule": "R10 / R13"
+  },
+  {
+    "key": "no-source-examples",
+    "title": "其余按需补充的事项",
+    "file": "no-source-examples.png",
+    "page": 17,
+    "required_fields": [
+      "涉及且缺失时再补，助手只列实际缺项。"
+    ],
+    "where_to_get": "",
+    "source_kind": "字段说明，暂无样图",
+    "types": [
+      "导师 / 经费项目确认",
+      "收款方不一致的盖章说明",
+      "航司行程单 / 审批表"
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "title": "我是科研组助理丽萍：还需你提供什么？",
+  "example": true,
+  "review_completed": false,
+  "itinerary": "成都 → 上海 → 成都\n2026年10月12日至14日，跨3个自然日；住宿晚数和补助另行核对。",
+  "note": "我是团队科研组助理丽萍。你交来的5组材料我已核对，能填的3项文件我先帮你做好了；下面最后2项还需要你补给我：",
+  "next_step": "把酒店水单和导师确认发给我后，我再帮你更新Excel清单、补助金额和A4打印册。齐备后单面A4打印签好字交到科研楼B545即可。",
+  "tasks": [
+    {"id":"01","name":"会议通知","status":"received","evidence":"示例：会议通知.pdf","note":"我已核对会议日期与地点。"},
+    {"id":"02","name":"去程火车票","status":"received","evidence":"示例：去程票.pdf","note":"10月12日，成都至上海。"},
+    {"id":"03","name":"返程火车票","status":"received","evidence":"示例：返程票.pdf","note":"10月14日，上海至成都。"},
+    {"id":"04","name":"住宿发票","status":"received","evidence":"示例：住宿发票.pdf","note":"发票已收到，但票面没写入住明细，见第09项。"},
+    {"id":"05","name":"对应支付记录（1组）","status":"received","evidence":"示例：支付记录3张","note":"已帮你关联交通与住宿票据，时间、金额和收款方已核对。"},
+    {"id":"06","name":"行程汇总","status":"generated","evidence":"示例中的自动成果","note":"我已从现有票据帮你整理好（不替代平台原始行程单）。"},
+    {"id":"07","name":"报销材料清单 Excel","status":"generated","evidence":"示例中的自动成果","note":"已知字段和票据支付明细我已帮你填好；补助暂列待定。"},
+    {"id":"08","name":"A4材料册草稿","status":"generated","evidence":"示例中的自动成果","note":"我已按团队要求顺序排好单张A4草稿。"},
+    {"id":"09","name":"酒店水单或订单详情","status":"missing","rule":"R09","action":"去酒店或订房平台导出一份发我（能看清人数、入住/退房日期、单价）。"},
+    {"id":"10","name":"导师伙食补助确认","status":"missing","rule":"R13","action":"学生报补助需把导师确认标准的记录发我，顺便说下对方有没有管饭。"}
+  ],
+  "documents": []
+}
