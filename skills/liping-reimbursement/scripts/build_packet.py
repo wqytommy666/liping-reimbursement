@@ -93,7 +93,7 @@ def render_list(case, output):
     title = ParagraphStyle('title', parent=style, fontSize=24, leading=31, spaceAfter=9)
     muted = ParagraphStyle('muted', parent=small, textColor=colors.HexColor('#657185'))
     width = A4[0] - 84
-    story = [p('LIPING REIMBURSEMENT · 团队科研组助理丽萍', muted), Spacer(1, 8),
+    story = [p('LIPING REIMBURSEMENT · 团队科研组助理丽萍姐', muted), Spacer(1, 8),
              p(case['title'], title)]
     if case.get('example'):
         story += [p('虚构示例 · 用于展示使用流程，不是实际报销材料', muted), Spacer(1, 12)]
@@ -139,12 +139,12 @@ def render_list(case, output):
         c.line(42, 38, A4[0] - 42, 38)
         c.setFont('CJK', 8)
         c.setFillColor(colors.HexColor('#657185'))
-        c.drawString(42, 24, '丽萍报账 · 团队科研组助理' + (' / 示例' if case.get('example') else ''))
+        c.drawString(42, 24, '丽萍姐报账 · 团队科研组助理' + (' / 示例' if case.get('example') else ''))
         c.drawRightString(A4[0] - 42, 24, str(doc.page))
 
     SimpleDocTemplate(str(output), pagesize=A4, leftMargin=42, rightMargin=42,
                       topMargin=38, bottomMargin=52, title=case['title'],
-                      author='丽萍报账 (Liping Reimbursement)').build(
+                      author='丽萍姐报账 (Liping Reimbursement)').build(
                           story, onFirstPage=footer, onLaterPages=footer)
 
 
